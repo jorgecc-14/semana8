@@ -1,0 +1,21 @@
+<?php
+header("Location: index.html");
+exit();
+include("conexion.php");
+
+$origen = $_POST['origen'];
+$destino = $_POST['destino'];
+$fecha = $_POST['fecha'];
+$plazas = intval($_POST['plazas']);
+$precio = floatval($_POST['precio']);
+
+$sql = "INSERT INTO VUELO (origen, destino, fecha, plazas_disponibles, precio) 
+        VALUES ('$origen', '$destino', '$fecha', $plazas, $precio)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Vuelo agregado correctamente.";
+} else {
+    echo "Error: " . $conn->error;
+}
+$conn->close();
+?>

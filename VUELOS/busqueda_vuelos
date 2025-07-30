@@ -1,0 +1,9 @@
+<section>
+    <h3>Buscar Vuelos</h3>
+    <form method="GET" action="buscar_vuelos.php">
+        <input type="text" name="origen" placeholder="Origen" required>
+        <input type="text" name="destino" placeholder="Destino" required>
+        <input type="date" name="fecha" required>
+        <input type="submit" value="Buscar">
+    </form>
+</section>
